@@ -15,10 +15,10 @@
         ]
  },
 
- %% Lager config
  %% see https://github.com/basho/lager#configuration
  %% see https://github.com/basho/lager/blob/master/src/lager.app.src
  {lager, [
+   {log_root, "log"},
    {handlers, [
      {lager_console_backend, info},
      {lager_file_backend, [{file, "error.log"}, {level, error},
@@ -26,5 +26,10 @@
      {lager_file_backend, [{file, "console.log"}, {level, info},
                            {size, 10485760}, {date, "$D0"}, {count, 5}]}
    ]}
+ ]},
+{setup, [
+ {home, "."},
+ {log_dir, "log"},
+ {data_dir, "data"}
  ]}
 ].
