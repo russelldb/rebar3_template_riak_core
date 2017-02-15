@@ -18,8 +18,6 @@ Use
 
 ::
 
-    mkdir ricor
-    cd ricor
     rebar3 new rebar3_riak_core name=ricor
     rebar3 release
     rebar3 run
